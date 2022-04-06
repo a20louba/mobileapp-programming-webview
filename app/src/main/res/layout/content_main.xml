@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+
     <WebView
         android:id="@+id/min_webview"
         android:layout_width="match_parent"

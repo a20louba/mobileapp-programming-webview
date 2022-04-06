@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     WebView minWebview;
 
     public void showExternalWebPage(){
-        // TODO: Add your code for showing external web page here
+        minWebview.loadUrl("https://his.se");
     }
 
     public void showInternalWebPage(){
-        // TODO: Add your code for showing internal web page here
+        minWebview.loadUrl("file:///android_asset/htmlsida.html");
 
     }
 
@@ -33,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         minWebview = findViewById(R.id.min_webview);
 
-        minWebview.loadUrl("file:///android_asset/htmlsida.html");
+        minWebview.getSettings().setJavaScriptEnabled(true);
+        minWebview.setWebViewClient(new WebViewClient());
+        minWebview.loadUrl("https://his.se");
+//        minWebview.loadUrl("file:///android_asset/htmlsida.html");
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -86,11 +90,18 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
+            showExternalWebPage();
+
             Log.d("==>","Will display external web page");
             return true;
         }
 
+
         if (id == R.id.action_internal_web) {
+            showInternalWebPage();
+
+
+
             Log.d("==>","Will display internal web page");
             return true;
         }
