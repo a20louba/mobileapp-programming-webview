@@ -4,7 +4,8 @@
 **Skriv din rapport här!**
 
 jag har skapat en external sida och en internal, jag upplevde att det var svårt att veta vad och var man skulle skriva kod.
-
+För att kunna orientera sig mellan sidorna har jag använt mig av showExternalWebPage och showInternalWebPage. 
+Dessa har jag lagt in i javafilen main activity, public betyder att metoden kommer att var visuell och void innebär att det inte kommer något i ''return''. '
 
 ```
  public void showExternalWebPage(){
